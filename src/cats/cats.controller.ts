@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { CreateCatDto } from './models/create-cat.dto';
+import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
 
@@ -23,9 +23,5 @@ export class CatsController {
     return `This action returns a ${params.id} cat.`;
   }
 
-  // TODO: estou em dependency injection: https://docs.nestjs.com/providers
-
-  // @Get()
-  // @Redirect('https://nestjs.com')
-  // findAll(): void {}
+  // TODO: estou agora nos middlewares: https://docs.nestjs.com/middleware
 }
