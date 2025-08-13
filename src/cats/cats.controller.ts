@@ -21,7 +21,8 @@ export class CatsController {
 
   @Post()
   async create(@Body() createCatDto: CreateCatDto) {
-    this.catsService.create(createCatDto);
+    throw new BadRequestException();
+    // this.catsService.create(createCatDto);
   }
 
   @Get()
@@ -33,9 +34,9 @@ export class CatsController {
 
   @Get(':id')
   findOne(@Param() params: any): string {
-    console.log(params.id); 
+    console.log(params.id);
     return `This action returns a ${params.id} cat.`;
   }
 
-  // TODO: estou agora nos exception filters: https://docs.nestjs.com/exception-filters (parte dos binding filters)
+  // TODO: estou agora nas pipes: https://docs.nestjs.com/pipes
 }
